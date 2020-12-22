@@ -152,20 +152,20 @@ void OneDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         float* channelData = buffer.getWritePointer (channel);
 
         mGain[channel]->process(channelData,
-                                0.5f,
+                                getParameter(static_cast<int>(ODParameters::InputGain)),
                                 channelData,
                                 buffer.getNumSamples());
         
-        const float rate = (channel == 0) ? 0.0f : 0.25f;
+        const float rate = (channel == 0) ? 0.0f : getParameter(static_cast<int>(ODParameters::ModulationRate));
 
         mLFO[channel]->process(rate,
-                               0.5f,
+                               getParameter(static_cast<int>(ODParameters::ModulationDepth)),
                                buffer.getNumSamples());
         
         mDelay[channel]->process(channelData,
-                                 0.25f,
-                                 0.5f,
-                                 0.35f,
+                                 getParameter(static_cast<int>(ODParameters::DelayTime)),
+                                 getParameter(static_cast<int>(ODParameters::DelayFeedback)),
+                                 getParameter(static_cast<int>(ODParameters::DelayWetDry)),
                                  mLFO[channel]->getBuffer(),
                                  channelData,
                                  buffer.getNumSamples());
@@ -201,7 +201,13 @@ void OneDelayAudioProcessor::initializeParameters()
 {
     for (int i = 0; i < static_cast<int>(ODParameters::_TotalNumParameters); ++i)
     {
-//        parameters.createAndAddParameter(<#const String &parameterID#>, <#const String &parameterName#>, <#const String &labelText#>, <#NormalisableRange<float> valueRange#>, <#float defaultValue#>, <#std::function<String (float)> valueToTextFunction#>, <#std::function<float (const String &)> textToValueFunction#>);
+        parameters.createAndAddParameter(ODParameterID[i],
+                                         ODParameterID[i],
+                                         ODParameterID[i],
+                                         juce::NormalisableRange<float>(0.0f, 1.0f),
+                                         0.5f,
+                                         nullptr,
+                                         nullptr);
     }
 }
 
@@ -209,7 +215,7 @@ void OneDelayAudioProcessor::initializeDSP()
 {
     for (int i = 0; i < 2; ++i)
     {
-        mGain[i] = std::make_unique<ODGain>();
+        mGain[i]    = std::make_unique<ODGain>();
         mDelay[i] = std::make_unique<ODDelay>();
         mLFO[i] = std::make_unique<ODLfo>();
     }
