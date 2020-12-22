@@ -151,10 +151,10 @@ void OneDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
     {
         float* channelData = buffer.getWritePointer (channel);
 
-        mGain[channel]->process(channelData,
-                                getParameter(static_cast<int>(ODParameters::InputGain)),
-                                channelData,
-                                buffer.getNumSamples());
+        mInputGain[channel]->process(channelData,
+                             getParameter(static_cast<int>(ODParameters::InputGain)),
+                             channelData,
+                             buffer.getNumSamples());
         
         const float rate = (channel == 0) ? 0.0f : getParameter(static_cast<int>(ODParameters::ModulationRate));
 
@@ -169,6 +169,11 @@ void OneDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
                                  mLFO[channel]->getBuffer(),
                                  channelData,
                                  buffer.getNumSamples());
+        
+        mOutputGain[channel]->process(channelData,
+                              getParameter(static_cast<int>(ODParameters::OutputGain)),
+                              channelData,
+                              buffer.getNumSamples());
     }
 }
 
@@ -215,9 +220,10 @@ void OneDelayAudioProcessor::initializeDSP()
 {
     for (int i = 0; i < 2; ++i)
     {
-        mGain[i]    = std::make_unique<ODGain>();
-        mDelay[i] = std::make_unique<ODDelay>();
-        mLFO[i] = std::make_unique<ODLfo>();
+        mInputGain[i]   = std::make_unique<ODGain>();
+        mOutputGain[i]  = std::make_unique<ODGain>();
+        mDelay[i]       = std::make_unique<ODDelay>();
+        mLFO[i]         = std::make_unique<ODLfo>();
     }
 }
 

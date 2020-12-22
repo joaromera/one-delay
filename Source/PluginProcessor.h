@@ -65,7 +65,8 @@ private:
     
     void initializeParameters();
     
-    std::unique_ptr<ODGain> mGain[2];
+    std::unique_ptr<ODGain> mInputGain[2];
+    std::unique_ptr<ODGain> mOutputGain[2];
     std::unique_ptr<ODDelay> mDelay[2];
     std::unique_ptr<ODLfo> mLFO[2];
     
