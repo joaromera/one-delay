@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="tXHUTi" name="OneDelay" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+  <MAINGROUP id="uxpP0E" name="OneDelay">
+    <GROUP id="{4326BE62-DF16-F592-326F-E817B007DE86}" name="Panels">
+      <FILE id="pQOxbl" name="TopPanel.cpp" compile="1" resource="0" file="Source/TopPanel.cpp"/>
+      <FILE id="KNN1QL" name="TopPanel.h" compile="0" resource="0" file="Source/TopPanel.h"/>
+      <FILE id="v4PGkH" name="CentralPanel.cpp" compile="1" resource="0"
+            file="Source/CentralPanel.cpp"/>
+      <FILE id="qA5Msf" name="CentralPanel.h" compile="0" resource="0" file="Source/CentralPanel.h"/>
+      <FILE id="dQO75Y" name="CentralPanelMenuBar.cpp" compile="1" resource="0"
+            file="Source/CentralPanelMenuBar.cpp"/>
+      <FILE id="AHdewV" name="CentralPanelMenuBar.h" compile="0" resource="0"
+            file="Source/CentralPanelMenuBar.h"/>
+      <FILE id="P2dN1t" name="FxPanel.cpp" compile="1" resource="0" file="Source/FxPanel.cpp"/>
+      <FILE id="ttUlvj" name="FxPanel.h" compile="0" resource="0" file="Source/FxPanel.h"/>
+      <FILE id="jBKDwZ" name="PanelBase.h" compile="0" resource="0" file="Source/PanelBase.h"/>
+      <FILE id="PQZ7i7" name="PanelBase.cpp" compile="1" resource="0" file="Source/PanelBase.cpp"/>
+      <FILE id="y9Y8vR" name="GainPanel.cpp" compile="1" resource="0" file="Source/GainPanel.cpp"/>
+      <FILE id="Y5kyqI" name="GainPanel.h" compile="0" resource="0" file="Source/GainPanel.h"/>
+      <FILE id="rw9SFy" name="MainPanel.cpp" compile="1" resource="0" file="Source/MainPanel.cpp"/>
+      <FILE id="t10ipO" name="MainPanel.h" compile="0" resource="0" file="Source/MainPanel.h"/>
+    </GROUP>
+    <GROUP id="{85AE8F82-78A9-9E18-DB30-9BD98517A98B}" name="DSP">
+      <FILE id="SAEbGB" name="ODDelay.cpp" compile="1" resource="0" file="Source/ODDelay.cpp"/>
+      <FILE id="lqw9tn" name="ODDelay.h" compile="0" resource="0" file="Source/ODDelay.h"/>
+      <FILE id="dGsDPi" name="ODGain.cpp" compile="1" resource="0" file="Source/ODGain.cpp"/>
+      <FILE id="iQdgLP" name="ODGain.h" compile="0" resource="0" file="Source/ODGain.h"/>
+      <FILE id="xeAFQ2" name="ODLfo.cpp" compile="1" resource="0" file="Source/ODLfo.cpp"/>
+      <FILE id="CqdUpc" name="ODLfo.h" compile="0" resource="0" file="Source/ODLfo.h"/>
+    </GROUP>
+    <GROUP id="{8FD66494-946F-FA91-583D-862C6A70B5A8}" name="Helpers">
+      <FILE id="IsUeYv" name="ODAudioHelpers.h" compile="0" resource="0"
+            file="Source/ODAudioHelpers.h"/>
+      <FILE id="wAXyNU" name="ODInterfaceDefines.h" compile="0" resource="0"
+            file="Source/ODInterfaceDefines.h"/>
+    </GROUP>
+    <GROUP id="{4DFE8CE4-5D4B-2589-E4C5-7DAD98A020B1}" name="Source">
+      <FILE id="xuphjX" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="ROKf2t" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="FwJUuV" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="RMKKUP" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="OneDelay"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="OneDelay"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
