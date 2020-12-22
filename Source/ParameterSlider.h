@@ -11,11 +11,12 @@
 #pragma once
 
 #include "JuceHeader.h"
+#include "ODParameters.h"
 
 class ParameterSlider : public juce::Slider
 {
 public:
-    ParameterSlider(juce::AudioProcessorValueTreeState& stateToControl, const juce::String& parameterID);
+    ParameterSlider(juce::AudioProcessorValueTreeState& stateToControl, ODParameters parameterType);
     ~ParameterSlider();
 
 private:

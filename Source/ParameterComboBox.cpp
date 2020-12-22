@@ -10,9 +10,9 @@
 
 #include "ParameterComboBox.h"
 
-ParameterComboBox::ParameterComboBox(juce::AudioProcessorValueTreeState& stateToControl, const juce::String& parameterID)
-    : juce::ComboBox(parameterID)
-    , mAttachment(stateToControl, parameterID, *this)
+ParameterComboBox::ParameterComboBox(juce::AudioProcessorValueTreeState& stateToControl, ODParameters parameterType)
+    : juce::ComboBox(ODParameterID[static_cast<int>(parameterType)])
+    , mAttachment(stateToControl, getName(), *this)
 {
 }
 

@@ -11,13 +11,14 @@
 #pragma once
 
 #include "PanelBase.h"
+#include "ParameterSlider.h"
 
 class GainPanel : public PanelBase
 {
 public:
-    GainPanel(OneDelayAudioProcessor* inProcessor);
+    GainPanel(OneDelayAudioProcessor* inProcessor, ODParameters inParameterID);
     ~GainPanel();
     
 private:
-  
+    ParameterSlider mSlider;
 };

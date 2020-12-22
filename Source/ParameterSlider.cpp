@@ -10,10 +10,9 @@
 
 #include "ParameterSlider.h"
 
-
-ParameterSlider::ParameterSlider(juce::AudioProcessorValueTreeState& stateToControl, const juce::String& parameterID)
-    : juce::Slider(parameterID)
-    , mAttachment(stateToControl, parameterID, *this)
+ParameterSlider::ParameterSlider(juce::AudioProcessorValueTreeState& stateToControl, ODParameters parameterType)
+    : juce::Slider(ODParameterID[static_cast<int>(parameterType)])
+    , mAttachment(stateToControl, getName(), *this)
 {
     setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
     setTextBoxStyle(Slider::TextEntryBoxPosition::TextBoxBelow, false, 0, 0);

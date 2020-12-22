@@ -12,8 +12,8 @@
 
 MainPanel::MainPanel(OneDelayAudioProcessor* inProcessor)
     : PanelBase(inProcessor)
-    , mInputGainPanel(inProcessor)
-    , mOutputGainPanel(inProcessor)
+    , mInputGainPanel(inProcessor, ODParameters::InputGain)
+    , mOutputGainPanel(inProcessor, ODParameters::OutputGain)
     , mTopPanel(inProcessor)
     , mCentralPanel(inProcessor)
 {
