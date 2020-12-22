@@ -3,6 +3,16 @@
 <JUCERPROJECT id="tXHUTi" name="OneDelay" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="uxpP0E" name="OneDelay">
+    <GROUP id="{BCA8776E-2143-E4D2-C5B4-75B1AA3FD8DE}" name="ParameterControls">
+      <FILE id="VPobJe" name="ParameterComboBox.cpp" compile="1" resource="0"
+            file="Source/ParameterComboBox.cpp"/>
+      <FILE id="awPre9" name="ParameterComboBox.h" compile="0" resource="0"
+            file="Source/ParameterComboBox.h"/>
+      <FILE id="yCNJoY" name="ParameterSlider.cpp" compile="1" resource="0"
+            file="Source/ParameterSlider.cpp"/>
+      <FILE id="PnvXye" name="ParameterSlider.h" compile="0" resource="0"
+            file="Source/ParameterSlider.h"/>
+    </GROUP>
     <GROUP id="{4326BE62-DF16-F592-326F-E817B007DE86}" name="Panels">
       <FILE id="v4PGkH" name="CentralPanel.cpp" compile="1" resource="0"
             file="Source/CentralPanel.cpp"/>
