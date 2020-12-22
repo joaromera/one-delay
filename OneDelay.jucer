@@ -4,8 +4,6 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="uxpP0E" name="OneDelay">
     <GROUP id="{4326BE62-DF16-F592-326F-E817B007DE86}" name="Panels">
-      <FILE id="pQOxbl" name="TopPanel.cpp" compile="1" resource="0" file="Source/TopPanel.cpp"/>
-      <FILE id="KNN1QL" name="TopPanel.h" compile="0" resource="0" file="Source/TopPanel.h"/>
       <FILE id="v4PGkH" name="CentralPanel.cpp" compile="1" resource="0"
             file="Source/CentralPanel.cpp"/>
       <FILE id="qA5Msf" name="CentralPanel.h" compile="0" resource="0" file="Source/CentralPanel.h"/>
@@ -15,12 +13,14 @@
             file="Source/CentralPanelMenuBar.h"/>
       <FILE id="P2dN1t" name="FxPanel.cpp" compile="1" resource="0" file="Source/FxPanel.cpp"/>
       <FILE id="ttUlvj" name="FxPanel.h" compile="0" resource="0" file="Source/FxPanel.h"/>
-      <FILE id="jBKDwZ" name="PanelBase.h" compile="0" resource="0" file="Source/PanelBase.h"/>
-      <FILE id="PQZ7i7" name="PanelBase.cpp" compile="1" resource="0" file="Source/PanelBase.cpp"/>
       <FILE id="y9Y8vR" name="GainPanel.cpp" compile="1" resource="0" file="Source/GainPanel.cpp"/>
       <FILE id="Y5kyqI" name="GainPanel.h" compile="0" resource="0" file="Source/GainPanel.h"/>
       <FILE id="rw9SFy" name="MainPanel.cpp" compile="1" resource="0" file="Source/MainPanel.cpp"/>
       <FILE id="t10ipO" name="MainPanel.h" compile="0" resource="0" file="Source/MainPanel.h"/>
+      <FILE id="PQZ7i7" name="PanelBase.cpp" compile="1" resource="0" file="Source/PanelBase.cpp"/>
+      <FILE id="jBKDwZ" name="PanelBase.h" compile="0" resource="0" file="Source/PanelBase.h"/>
+      <FILE id="pQOxbl" name="TopPanel.cpp" compile="1" resource="0" file="Source/TopPanel.cpp"/>
+      <FILE id="KNN1QL" name="TopPanel.h" compile="0" resource="0" file="Source/TopPanel.h"/>
     </GROUP>
     <GROUP id="{85AE8F82-78A9-9E18-DB30-9BD98517A98B}" name="DSP">
       <FILE id="SAEbGB" name="ODDelay.cpp" compile="1" resource="0" file="Source/ODDelay.cpp"/>
@@ -35,6 +35,7 @@
             file="Source/ODAudioHelpers.h"/>
       <FILE id="wAXyNU" name="ODInterfaceDefines.h" compile="0" resource="0"
             file="Source/ODInterfaceDefines.h"/>
+      <FILE id="wF0f9G" name="ODParameters.h" compile="0" resource="0" file="Source/ODParameters.h"/>
     </GROUP>
     <GROUP id="{4DFE8CE4-5D4B-2589-E4C5-7DAD98A020B1}" name="Source">
       <FILE id="xuphjX" name="PluginProcessor.cpp" compile="1" resource="0"

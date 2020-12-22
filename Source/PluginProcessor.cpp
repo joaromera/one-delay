@@ -9,6 +9,8 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
+#include "ODParameters.h"
+
 //==============================================================================
 OneDelayAudioProcessor::OneDelayAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -20,8 +22,10 @@ OneDelayAudioProcessor::OneDelayAudioProcessor()
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        )
+    , parameters(*this, nullptr)
 #endif
 {
+    initializeParameters();
     initializeDSP();
 }
 
@@ -152,7 +156,7 @@ void OneDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
                                 channelData,
                                 buffer.getNumSamples());
         
-        float rate = (channel == 0) ? 0.0f : 0.25f;
+        const float rate = (channel == 0) ? 0.0f : 0.25f;
 
         mLFO[channel]->process(rate,
                                0.5f,
@@ -193,6 +197,14 @@ void OneDelayAudioProcessor::setStateInformation (const void* data, int sizeInBy
     // whose contents will have been created by the getStateInformation() call.
 }
 
+void OneDelayAudioProcessor::initializeParameters()
+{
+    for (int i = 0; i < static_cast<int>(ODParameters::_TotalNumParameters); ++i)
+    {
+//        parameters.createAndAddParameter(<#const String &parameterID#>, <#const String &parameterName#>, <#const String &labelText#>, <#NormalisableRange<float> valueRange#>, <#float defaultValue#>, <#std::function<String (float)> valueToTextFunction#>, <#std::function<float (const String &)> textToValueFunction#>);
+    }
+}
+
 void OneDelayAudioProcessor::initializeDSP()
 {
     for (int i = 0; i < 2; ++i)
@@ -202,7 +214,6 @@ void OneDelayAudioProcessor::initializeDSP()
         mLFO[i] = std::make_unique<ODLfo>();
     }
 }
-
 
 //==============================================================================
 // This creates new instances of the plugin..

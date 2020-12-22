@@ -16,7 +16,7 @@ enum class FxPanelStyle
 {
     Delay,
     Chorus,
-    TotalNumStyles
+    _TotalNumStyles
 };
 
 class FxPanel : public PanelBase

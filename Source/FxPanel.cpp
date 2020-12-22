@@ -39,7 +39,7 @@ void FxPanel::paint(juce::Graphics& g)
         }
         break;
             
-        case FxPanelStyle::TotalNumStyles:
+        case FxPanelStyle::_TotalNumStyles:
         {
             jassertfalse;
         }
