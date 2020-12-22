@@ -9,3 +9,13 @@
 */
 
 #include "ParameterComboBox.h"
+
+ParameterComboBox::ParameterComboBox(juce::AudioProcessorValueTreeState& stateToControl, const juce::String& parameterID)
+    : juce::ComboBox(parameterID)
+    , mAttachment(stateToControl, parameterID, *this)
+{
+}
+
+ParameterComboBox::~ParameterComboBox()
+{
+}
