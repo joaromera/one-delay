@@ -43,6 +43,8 @@
     <GROUP id="{8FD66494-946F-FA91-583D-862C6A70B5A8}" name="Helpers">
       <FILE id="IsUeYv" name="ODAudioHelpers.h" compile="0" resource="0"
             file="Source/ODAudioHelpers.h"/>
+      <FILE id="lU9WSN" name="ODFunctionHelpers.h" compile="0" resource="0"
+            file="Source/ODFunctionHelpers.h"/>
       <FILE id="wAXyNU" name="ODInterfaceDefines.h" compile="0" resource="0"
             file="Source/ODInterfaceDefines.h"/>
       <FILE id="wF0f9G" name="ODParameters.h" compile="0" resource="0" file="Source/ODParameters.h"/>

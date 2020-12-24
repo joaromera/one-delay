@@ -12,6 +12,7 @@
 
 #include "PanelBase.h"
 #include "ParameterSlider.h"
+#include "JuceHeader.h"
 
 enum class FxPanelStyle
 {
@@ -20,12 +21,13 @@ enum class FxPanelStyle
     _TotalNumStyles
 };
 
-class FxPanel : public PanelBase
+class FxPanel : public PanelBase, public juce::ComboBox::Listener
 {
 public:
     FxPanel(OneDelayAudioProcessor* inProcessor);
     ~FxPanel();
     
+    void comboBoxChanged(juce::ComboBox* comboBoxChanged) override;
     void paint(juce::Graphics& g) override;
     void setFxPanelStyle(FxPanelStyle inStyle);
 

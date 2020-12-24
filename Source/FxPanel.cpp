@@ -10,17 +10,24 @@
 
 #include "FxPanel.h"
 #include "ODParameters.h"
+#include "ODFunctionHelpers.h"
 
 FxPanel::FxPanel(OneDelayAudioProcessor* inProcessor)
     : PanelBase(inProcessor)
     , mStyle(FxPanelStyle::Chorus)
 {
     setSize(FX_PANEL_WIDTH, FX_PANEL_HEIGHT);
-    setFxPanelStyle(FxPanelStyle::Chorus);
+    setFxPanelStyle(FxPanelStyle::Delay);
 }
 
 FxPanel::~FxPanel()
 {
+}
+
+void FxPanel::comboBoxChanged(juce::ComboBox* comboBoxChanged)
+{
+    FxPanelStyle newStyle = static_cast<FxPanelStyle>(comboBoxChanged->getSelectedItemIndex());
+    setFxPanelStyle(newStyle);
 }
 
 void FxPanel::paint(juce::Graphics& g)
@@ -31,13 +38,13 @@ void FxPanel::paint(juce::Graphics& g)
     {
         case FxPanelStyle::Delay:
         {
-            g.drawFittedText("DELAY", 0, 0, getWidth(), getHeight(), juce::Justification::centred, 1);
+            g.drawFittedText("DELAY", 0, 0, getWidth(), getHeight() * 0.75f, juce::Justification::centred, 1);
         }
         break;
             
         case FxPanelStyle::Chorus:
         {
-            g.drawFittedText("CHORUS", 0, 0, getWidth(), getHeight(), juce::Justification::centred, 1);
+            g.drawFittedText("CHORUS", 0, 0, getWidth(), getHeight() * 0.75f, juce::Justification::centred, 1);
         }
         break;
             
@@ -46,6 +53,11 @@ void FxPanel::paint(juce::Graphics& g)
             jassertfalse;
         }
         break;
+    }
+
+    for (int i = 0; i < mSliders.size(); ++i)
+    {
+        paintComponentLabel(g, mSliders[i]);
     }
 }
 
