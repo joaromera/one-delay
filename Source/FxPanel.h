@@ -11,6 +11,7 @@
 #pragma once
 
 #include "PanelBase.h"
+#include "ParameterSlider.h"
 
 enum class FxPanelStyle
 {
@@ -30,4 +31,5 @@ public:
 
 private:
     FxPanelStyle mStyle;
+    juce::OwnedArray<ParameterSlider> mSliders;
 };
