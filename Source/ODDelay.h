@@ -12,6 +12,12 @@
 
 #include "ODAudioHelpers.h"
 
+enum DelayType
+{
+    Delay = 0,
+    Chorus
+};
+
 class ODDelay
 {
 public:
@@ -25,6 +31,7 @@ public:
                  float inTime,
                  float inFeedback,
                  float inWetDry,
+                 float inType,
                  float* inModulationBuffer,
                  float* outAudio,
                  int inNumSamplesToRender);

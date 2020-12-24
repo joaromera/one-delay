@@ -70,6 +70,7 @@ void ODDelay::process(float *inAudio,
                       float inTime,
                       float inFeedback,
                       float inWetDry,
+                      float inType,
                       float* inModulationBuffer,
                       float *outAudio,
                       int inNumSamplesToRender)
@@ -80,9 +81,17 @@ void ODDelay::process(float *inAudio,
     
     for (int i = 0; i < inNumSamplesToRender; ++i)
     {
-        const double delayTimeModulation = (inTime + (0.002f * inModulationBuffer[i]));
-        mTimeSmoothed -= parameterSmoothingCoeffGeneric * (mTimeSmoothed - delayTimeModulation);
-        const double delayTimeInSamples = mTimeSmoothed * delayTimeModulation * mSampleRate;
+        if ((int) inType == DelayType::Delay)
+        {
+            mTimeSmoothed -= parameterSmoothingCoeffFine * (mTimeSmoothed - inTime);
+        }
+        else
+        {
+            const double delayTimeModulation = (0.003f + (0.002f * inModulationBuffer[i]));
+            mTimeSmoothed -= parameterSmoothingCoeffFine * (mTimeSmoothed - delayTimeModulation);
+        }
+
+        const double delayTimeInSamples = mTimeSmoothed * mSampleRate;
         const double sample = getInterpolatedSample(delayTimeInSamples);
         mBuffer[mDelayIndex] = inAudio[i] + (mFeedbackSample * feedbackMapped);
         mFeedbackSample = sample;

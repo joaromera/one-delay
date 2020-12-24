@@ -166,6 +166,7 @@ void OneDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
                                  getParameter(static_cast<int>(ODParameters::DelayTime)),
                                  getParameter(static_cast<int>(ODParameters::DelayFeedback)),
                                  getParameter(static_cast<int>(ODParameters::DelayWetDry)),
+                                 getParameter(static_cast<int>(ODParameters::DelayType)),
                                  mLFO[channel]->getBuffer(),
                                  channelData,
                                  buffer.getNumSamples());
