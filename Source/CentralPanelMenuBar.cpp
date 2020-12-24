@@ -21,7 +21,10 @@ CentralPanelMenuBar::CentralPanelMenuBar(OneDelayAudioProcessor* inProcessor)
     mFxTypeComboBox.setBounds(getWidth() - width, 0, width, getHeight());
     mFxTypeComboBox.addItem("DELAY", 1);
     mFxTypeComboBox.addItem("CHORUS", 2);
-    mFxTypeComboBox.setSelectedItemIndex(0, juce::dontSendNotification); // 0 is "DELAY"
+    mFxTypeComboBox.setSelectedItemIndex(
+        mProcessor->getParameter(static_cast<int>(ODParameters::DelayType)),
+        juce::dontSendNotification
+    );
     addAndMakeVisible(mFxTypeComboBox);
 }
 

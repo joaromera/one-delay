@@ -17,7 +17,9 @@ FxPanel::FxPanel(OneDelayAudioProcessor* inProcessor)
     , mStyle(FxPanelStyle::Chorus)
 {
     setSize(FX_PANEL_WIDTH, FX_PANEL_HEIGHT);
-    setFxPanelStyle(FxPanelStyle::Delay);
+    
+    const int currentStyle = mProcessor->getParameter(static_cast<int>(ODParameters::DelayType));
+    setFxPanelStyle(static_cast<FxPanelStyle>(currentStyle));
 }
 
 FxPanel::~FxPanel()

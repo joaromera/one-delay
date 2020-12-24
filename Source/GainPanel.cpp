@@ -10,6 +10,7 @@
 
 #include "GainPanel.h"
 #include "ODParameters.h"
+#include "ODFunctionHelpers.h"
 
 GainPanel::GainPanel(OneDelayAudioProcessor* inProcessor, ODParameters inParameterID)
     : PanelBase(inProcessor)
@@ -29,4 +30,10 @@ GainPanel::GainPanel(OneDelayAudioProcessor* inProcessor, ODParameters inParamet
 
 GainPanel::~GainPanel()
 {
+}
+
+void GainPanel::paint(juce::Graphics& g)
+{
+    PanelBase::paint(g);
+    paintComponentLabel(g, &mSlider);
 }
