@@ -32,6 +32,6 @@ static std::string ODParameterID[static_cast<int>(ODParameters::_TotalNumParamet
     "Wet Dry",
     "Type",
     "Output Gain",
-    "Modulation Rate",
-    "Modulation Depth"
+    "Rate",
+    "Depth"
 };

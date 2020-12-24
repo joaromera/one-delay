@@ -121,4 +121,6 @@ void FxPanel::setFxPanelStyle(FxPanelStyle inStyle)
         }
         break;
     }
+    
+    repaint();
 }

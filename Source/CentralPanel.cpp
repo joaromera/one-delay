@@ -23,10 +23,10 @@ CentralPanel::CentralPanel(OneDelayAudioProcessor* inProcessor)
     mFxPanel.setTopLeftPosition(0, CENTER_PANEL_MENU_BAR_HEIGHT);
     addAndMakeVisible(mFxPanel);
     
-    mMenuBar.addFxTypeComboBoxListener(mFxPanel);
+    mMenuBar.addFxTypeComboBoxListener(&mFxPanel);
 }
 
 CentralPanel::~CentralPanel()
 {
-    mMenuBar.removeFxTypeComboBoxListener(mFxPanel);
+    mMenuBar.removeFxTypeComboBoxListener(&mFxPanel);
 }
