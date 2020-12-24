@@ -29,12 +29,12 @@ CentralPanelMenuBar::~CentralPanelMenuBar()
 {
 }
 
-void CentralPanelMenuBar::addFxTypeComboBoxListener(juce::ComboBox::Listener inListener)
+void CentralPanelMenuBar::addFxTypeComboBoxListener(juce::ComboBox::Listener* inListener)
 {
-    mFxTypeComboBox.addListener(&inListener);
+    mFxTypeComboBox.addListener(inListener);
 }
 
-void CentralPanelMenuBar::removeFxTypeComboBoxListener(juce::ComboBox::Listener inListener)
+void CentralPanelMenuBar::removeFxTypeComboBoxListener(juce::ComboBox::Listener* inListener)
 {
-    mFxTypeComboBox.removeListener(&inListener);
+    mFxTypeComboBox.removeListener(inListener);
 }

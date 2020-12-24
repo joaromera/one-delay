@@ -19,8 +19,8 @@ public:
     CentralPanelMenuBar(OneDelayAudioProcessor* inProcessor);
     ~CentralPanelMenuBar();
     
-    void addFxTypeComboBoxListener(juce::ComboBox::Listener inListener);
-    void removeFxTypeComboBoxListener(juce::ComboBox::Listener inListener);
+    void addFxTypeComboBoxListener(juce::ComboBox::Listener* inListener);
+    void removeFxTypeComboBoxListener(juce::ComboBox::Listener* inListener);
     
 private:
     ParameterComboBox mFxTypeComboBox;
